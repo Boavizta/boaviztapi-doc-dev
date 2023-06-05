@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-8.5.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.5.4">
     
     
       
@@ -17,7 +17,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.20d9efc8.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.80dcb947.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
@@ -253,7 +253,7 @@
   
   
     <li class="md-nav__item">
-      <a href="https://dev.api.boavizta.org/docs" class="md-nav__link">
+      <a href="https://api.boavizta.org/docs" class="md-nav__link">
         Try the API (OpenAPI)
       </a>
     </li>
@@ -360,6 +360,20 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../end_user_devices/" class="md-nav__link">
+        Get started with terminal and peripherals
+      </a>
     </li>
   
 
@@ -847,7 +861,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Explanations/devices/end_user_devices/" class="md-nav__link">
+      <a href="../../Explanations/devices/terminals_%26_peripherals/" class="md-nav__link">
         End user devices
       </a>
     </li>
@@ -1150,12 +1164,12 @@
 <h1 id="getting-started-5-min">Getting started (5 min)</h1>
 <p>This page presents basic queries that can be used to generate and use consumption profiles.</p>
 <p>You use <code>curl</code> in command line to query Boavizta demo (public) API.</p>
-<p>💡 <em>You can format the results by using jq (<code>curl -X 'GET' 'https://dev.api.boavizta.org/v1/consumption_profile/cpu' | jq</code>)</em></p>
+<p>💡 <em>You can format the results by using jq (<code>curl -X 'GET' 'https://api.boavizta.org/v1/consumption_profile/cpu' | jq</code>)</em></p>
 <h2 id="generate-a-cpu-consumption-profile-from-tdp">Generate a cpu consumption profile from TDP</h2>
 <p>In this query we generate consumption profile parameters (a,b,c,d) from a TDP and a model_range</p>
 <p><code>cpu_consumption_profile(workload) = a * ln(b*(workload + c)) + d</code></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">&#39;POST&#39;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="s1">&#39;https://dev.api.boavizta.org/v1/consumption_profile/cpu&#39;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="s1">&#39;https://api.boavizta.org/v1/consumption_profile/cpu&#39;</span><span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;accept: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
@@ -1165,7 +1179,6 @@
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="s1">    }</span>
 <a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="s1">  }&#39;</span>
 </code></pre></div>
-
 <p>Result :</p>
 <p>The API will select the average xeon gold consumption profile and adapt it with a TDP of 130 Watt.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
@@ -1175,12 +1188,11 @@
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">&quot;d&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.6087</span>
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p">}</span>
 </code></pre></div>
-
 <h2 id="generate-a-cpu-consumption-profile-from-workloads">Generate a cpu consumption profile from workloads</h2>
 <p>In this query we generate consumption profile parameters (a,b,c,d) from a workload datapoints and a model_range</p>
 <p><code>cpu_consumption_profile(workload) = a * ln(b*(workload + c)) + d</code></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">&#39;POST&#39;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="s1">&#39;https://dev.api.boavizta.org/v1/consumption_profile/cpu&#39;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="s1">&#39;https://api.boavizta.org/v1/consumption_profile/cpu&#39;</span><span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;accept: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
@@ -1207,7 +1219,6 @@
 <a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="s1">  ]</span>
 <a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="s1">}&#39;</span>
 </code></pre></div>
-
 <p>Result :</p>
 <p>The API will select the average xeon gold consumption profile and adapt it to match the given datapoints</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span>
@@ -1217,7 +1228,6 @@
 <a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="nt">&quot;d&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.6456240344253034</span>
 <a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="p">}</span>
 </code></pre></div>
-
 <p>For further information see : <a href="../../Explanations/consumption_profile/">The explanation page on consumption profiles</a></p>
 
 
@@ -1255,13 +1265,13 @@
       
       
         
-        <a href="../../Explanations/boavizta_db/" class="md-footer__link md-footer__link--next" aria-label="Next: Boavizta database" rel="next">
+        <a href="../end_user_devices/" class="md-footer__link md-footer__link--next" aria-label="Next: Get started with terminal and peripherals" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Boavizta database
+              Get started with terminal and peripherals
             </div>
           </div>
           <div class="md-footer__button md-icon">

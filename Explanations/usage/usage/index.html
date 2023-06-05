@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-8.5.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.5.4">
     
     
       
@@ -17,7 +17,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.20d9efc8.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.80dcb947.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
@@ -251,7 +251,7 @@
   
   
     <li class="md-nav__item">
-      <a href="https://dev.api.boavizta.org/docs" class="md-nav__link">
+      <a href="https://api.boavizta.org/docs" class="md-nav__link">
         Try the API (OpenAPI)
       </a>
     </li>
@@ -309,6 +309,20 @@
     <li class="md-nav__item">
       <a href="../../../getting_started/consumption_profile/" class="md-nav__link">
         Get started with consumption profiles
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting_started/end_user_devices/" class="md-nav__link">
+        Get started with terminal and peripherals
       </a>
     </li>
   
@@ -842,7 +856,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devices/end_user_devices/" class="md-nav__link">
+      <a href="../../devices/terminals_%26_peripherals/" class="md-nav__link">
         End user devices
       </a>
     </li>
@@ -1137,68 +1151,54 @@
 
 <h1 id="usage-methodology">Usage methodology</h1>
 <p>Usage impacts can be assessed at device or component level from usage configuration. </p>
-<p>Usage impacts are measured by multiplying a <strong><a href="../duration/">duration</a></strong>, an <strong><a href="../elec_factors/">impact factor</a></strong>, and an <strong><a href="../elec_conso/">electrical consumption</a></strong> :</p>
-<p><code>impact = electrical_consumption * duration * impact_factor</code></p>
+<p>Usage impacts are measured by multiplying a <strong><a href="../duration/">duration, a ratio of usage</a></strong>, an <strong><a href="../elec_factors/">impact factor</a></strong>, and an <strong><a href="../elec_conso/">electrical consumption</a></strong> :</p>
+<p><code>impact = electrical_consumption * (duration * use_time_ratio) * impact_factor</code></p>
 <h2 id="characteristics">Characteristics</h2>
 <table>
 <thead>
 <tr>
 <th>Name</th>
 <th>Unit</th>
-<th>Default value (default;min;max)</th>
 <th>Description</th>
 <th>Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>days_use_time</td>
-<td>None</td>
-<td>One year (365 days)</td>
-<td>Number of days considered in the evaluation</td>
-<td>2</td>
-</tr>
-<tr>
 <td>hours_use_time</td>
-<td>None</td>
-<td>One year (8760 hours)</td>
+<td>hours</td>
 <td>Number of hours considered in the evaluation</td>
 <td>2</td>
 </tr>
 <tr>
-<td>years_use_time</td>
-<td>None</td>
-<td>One year</td>
-<td>Number of years considered in the evaluation</td>
-<td>2</td>
-</tr>
-<tr>
-<td>years_life_time</td>
-<td>None</td>
-<td>Depends on the asset</td>
+<td>hours_life_time</td>
+<td>hours</td>
 <td>Lifespan of the element</td>
-<td>4</td>
+<td>35040 (4 years)</td>
 </tr>
 <tr>
 <td>usage_location</td>
 <td>trigram</td>
-<td>EEE (EU27+1)</td>
 <td>See <a href="../countries/">available country codes</a></td>
 <td>FRA</td>
 </tr>
 <tr>
-<td>hours_electrical_consumption</td>
+<td>avg_power</td>
 <td>Watt/hour</td>
-<td>None</td>
 <td>Average electrical consumption per hour</td>
 <td>120</td>
 </tr>
 <tr>
 <td>time_workload</td>
 <td>%workload or %time:%workload</td>
-<td>50%;0%;100%</td>
 <td>See usage</td>
 <td>..</td>
+</tr>
+<tr>
+<td>use_time_ratio</td>
+<td>/1</td>
+<td>Proportion of time the device is used during the given duration.</td>
+<td>0.5</td>
 </tr>
 </tbody>
 </table>

@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-8.5.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.5.4">
     
     
       
@@ -17,7 +17,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.20d9efc8.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.80dcb947.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
@@ -251,7 +251,7 @@
   
   
     <li class="md-nav__item">
-      <a href="https://dev.api.boavizta.org/docs" class="md-nav__link">
+      <a href="https://api.boavizta.org/docs" class="md-nav__link">
         Try the API (OpenAPI)
       </a>
     </li>
@@ -309,6 +309,20 @@
     <li class="md-nav__item">
       <a href="../../../getting_started/consumption_profile/" class="md-nav__link">
         Get started with consumption profiles
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting_started/end_user_devices/" class="md-nav__link">
+        Get started with terminal and peripherals
       </a>
     </li>
   
@@ -876,7 +890,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devices/end_user_devices/" class="md-nav__link">
+      <a href="../../devices/terminals_%26_peripherals/" class="md-nav__link">
         End user devices
       </a>
     </li>
@@ -1205,7 +1219,7 @@
 
 <h1 id="electrical-consumption">Electrical consumption</h1>
 <h2 id="given">Given</h2>
-<p>If available, user should send the electrical consumption of his components or devices in Watt/hour (<code>hours_electrical_consumption</code>).
+<p>If available, user should send the electrical consumption of his components or devices in Watt/hour (<code>avg_power</code>).
 Since the power will be extrapolated on the all duration, the power given should be the average power of the device or component over the given duration.</p>
 <h2 id="completed-from-the-archetype">Completed from the <a href="../../archetypes/">archetype</a>.</h2>
 <p>If available, the API will complete the missing electrical consumption by the electrical consumption of the archetype of the asset.</p>
@@ -1234,7 +1248,6 @@ The following </p>
 <a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="p">]</span>
 </code></pre></div>
-
 <p>This translates into using a component or a device:</p>
 <ul>
 <li>50% of the time at 10% ot its maximum workload,</li>
@@ -1299,17 +1312,15 @@ The following </p>
 </tr>
 </tbody>
 </table>
-<p><code>hours_electrical_consumption</code> is measured as follows :</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>hours_electrical_consumption = power(100%) * time_ratio(100%) + power(50%) * time_ratio(50%) + power(10%) * time_ratio(10%) + power(idle) * time_ratio(idle) + power(off) * time_ratio(off)
+<p><code>avg_power</code> is measured as follows :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>avg_power = power(100%) * time_ratio(100%) + power(50%) * time_ratio(50%) + power(10%) * time_ratio(10%) + power(idle) * time_ratio(idle) + power(off) * time_ratio(off)
 </code></pre></div>
-
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>hours_electrical_consumption = 260 * 0.15 + 182 * 0.55 + 77 * 0.1 + 36 * 0.2 + 0 * 0
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>avg_power = 260 * 0.15 + 182 * 0.55 + 77 * 0.1 + 36 * 0.2 + 0 * 0
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>                             = 39 + 100.1 + 7,7 + 7,2 + 0
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>                             = 154 W/hour
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>                             = 1349 kwh/year
 </code></pre></div>
-
-<p><strong>Result : </strong> 154 W/hour</p>
+<p>**Result : ** 154 W/hour</p>
 
 
 

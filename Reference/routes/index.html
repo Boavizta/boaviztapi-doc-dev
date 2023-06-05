@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-8.5.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.5.4">
     
     
       
@@ -17,7 +17,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.20d9efc8.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.80dcb947.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
@@ -251,7 +251,7 @@
   
   
     <li class="md-nav__item">
-      <a href="https://dev.api.boavizta.org/docs" class="md-nav__link">
+      <a href="https://api.boavizta.org/docs" class="md-nav__link">
         Try the API (OpenAPI)
       </a>
     </li>
@@ -309,6 +309,20 @@
     <li class="md-nav__item">
       <a href="../../getting_started/consumption_profile/" class="md-nav__link">
         Get started with consumption profiles
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/end_user_devices/" class="md-nav__link">
+        Get started with terminal and peripherals
       </a>
     </li>
   
@@ -797,7 +811,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Explanations/devices/end_user_devices/" class="md-nav__link">
+      <a href="../../Explanations/devices/terminals_%26_peripherals/" class="md-nav__link">
         End user devices
       </a>
     </li>
@@ -1249,6 +1263,12 @@
 <td>Default archetype for each asset can be set in the configuration file</td>
 <td><code>archetype=compute_medium</code></td>
 </tr>
+<tr>
+<td><code>duration</code></td>
+<td>Duration considered for the assessment. If not provided, the total duration of the asset will be used.</td>
+<td>None</td>
+<td><code>duration=8760</code> (1 year)</td>
+</tr>
 </tbody>
 </table>
 <h3 id="get">GET</h3>
@@ -1274,52 +1294,52 @@
 </tr>
 <tr>
 <td>GET</td>
-<td>/v1/user_terminal/laptop</td>
+<td>/v1/terminal/laptop</td>
 <td>Retrieve the impacts of a laptop</td>
 </tr>
 <tr>
 <td>GET</td>
-<td>/v1/user_terminal/desktop</td>
+<td>/v1/terminal/desktop</td>
 <td>Retrieve the impacts of a desktop (without screen)</td>
 </tr>
 <tr>
 <td>GET</td>
-<td>/v1/user_terminal/monitor</td>
-<td>Retrieve the impacts of a monitor (computer screen)</td>
-</tr>
-<tr>
-<td>GET</td>
-<td>/v1/user_terminal/smartphone</td>
+<td>/v1/terminal/smartphone</td>
 <td>Retrieve the impacts of a smartphone</td>
 </tr>
 <tr>
 <td>GET</td>
-<td>/v1/user_terminal/tablet</td>
+<td>/v1/terminal/tablet</td>
 <td>Retrieve the impacts of a tablet</td>
 </tr>
 <tr>
 <td>GET</td>
-<td>/v1/user_terminal/television</td>
+<td>/v1/terminal/television</td>
 <td>Retrieve the impacts of a television</td>
 </tr>
 <tr>
 <td>GET</td>
-<td>/v1/user_terminal/box</td>
+<td>/v1/terminal/box</td>
 <td>Retrieve the impacts of a box</td>
 </tr>
 <tr>
 <td>GET</td>
-<td>/v1/user_terminal/usb_stick</td>
+<td>/v1/peripheral/monitor</td>
+<td>Retrieve the impacts of a monitor (computer screen)</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/v1/peripheral/usb_stick</td>
 <td>Retrieve the impacts of a usb_stick</td>
 </tr>
 <tr>
 <td>GET</td>
-<td>/v1/user_terminal/external_ssd</td>
+<td>/v1/peripheral/external_ssd</td>
 <td>Retrieve the impacts of a external_ssd</td>
 </tr>
 <tr>
 <td>GET</td>
-<td>/v1/user_terminal/external_hdd</td>
+<td>/v1/peripheral/external_hdd</td>
 <td>Retrieve the impacts of a external_hdd</td>
 </tr>
 <tr>
@@ -1383,52 +1403,52 @@ The format section of the documentation details the format of the body for each 
 </tr>
 <tr>
 <td>POST</td>
-<td>/v1/user_terminal/laptop</td>
+<td>/v1/terminal/laptop</td>
 <td>Retrieve the impacts of a given usage and configuration for a laptop</td>
 </tr>
 <tr>
 <td>POST</td>
-<td>/v1/user_terminal/desktop</td>
+<td>/v1/terminal/desktop</td>
 <td>Retrieve the impacts of a given usage and configuration for a desktop (without screen)</td>
 </tr>
 <tr>
 <td>POST</td>
-<td>/v1/user_terminal/monitor</td>
-<td>Retrieve the impacts of a given usage and configuration for a monitor (computer screen)</td>
-</tr>
-<tr>
-<td>POST</td>
-<td>/v1/user_terminal/smartphone</td>
+<td>/v1/terminal/smartphone</td>
 <td>Retrieve the impacts of a given usage and configuration for a smartphone</td>
 </tr>
 <tr>
 <td>POST</td>
-<td>/v1/user_terminal/tablet</td>
+<td>/v1/terminal/tablet</td>
 <td>Retrieve the impacts of a given usage and configuration for a tablet</td>
 </tr>
 <tr>
 <td>POST</td>
-<td>/v1/user_terminal/television</td>
+<td>/v1/terminal/television</td>
 <td>Retrieve the impacts of a given usage and configuration for a television</td>
 </tr>
 <tr>
 <td>POST</td>
-<td>/v1/user_terminal/box</td>
+<td>/v1/terminal/box</td>
 <td>Retrieve the impacts of a given usage and configuration for a box</td>
 </tr>
 <tr>
 <td>POST</td>
-<td>/v1/user_terminal/usb_stick</td>
+<td>/v1/peripheral/monitor</td>
+<td>Retrieve the impacts of a given usage and configuration for a monitor (computer screen)</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>/v1/peripheral/usb_stick</td>
 <td>Retrieve the impacts of a given usage and configuration for a usb_stick</td>
 </tr>
 <tr>
 <td>POST</td>
-<td>/v1/user_terminal/external_ssd</td>
+<td>/v1/peripheral/external_ssd</td>
 <td>Retrieve the impacts of a given usage and configuration for a external_ssd</td>
 </tr>
 <tr>
 <td>POST</td>
-<td>/v1/user_terminal/external_hdd</td>
+<td>/v1/peripheral/external_hdd</td>
 <td>Retrieve the impacts of a given usage and configuration for a external_hdd</td>
 </tr>
 <tr>
@@ -1507,6 +1527,12 @@ The format section of the documentation details the format of the body for each 
 </tr>
 <tr>
 <td>GET</td>
+<td>/v1/server/archetype_config</td>
+<td><code>archetype</code></td>
+<td>Get the config of a given archetype</td>
+</tr>
+<tr>
+<td>GET</td>
 <td>/v1/cloud/all_instances</td>
 <td><code>provider</code></td>
 <td>Get all available cloud instances for a given provider</td>
@@ -1519,15 +1545,231 @@ The format section of the documentation details the format of the body for each 
 </tr>
 <tr>
 <td>GET</td>
-<td>/v1/user_terminal/archetypes</td>
-<td><code>name</code></td>
-<td>Get all available archetype for a given component name</td>
+<td>/v1/server/archetype_config</td>
+<td><code>instance</code></td>
+<td>Get the config of a given instance</td>
 </tr>
 <tr>
 <td>GET</td>
-<td>/v1/component/archetypes</td>
-<td><code>name</code></td>
-<td>Get all available archetype for a end user terminal name</td>
+<td>/v1/terminal/all</td>
+<td></td>
+<td>Get all available terminal with their route prefix</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/v1/terminal/laptop/archetypes</td>
+<td></td>
+<td>Get all available archetype for a given laptop name</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/v1/terminal/laptop/archetype_config</td>
+<td><code>archetype</code></td>
+<td>Get the config of a given archetype</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/v1/terminal/desktop/archetypes</td>
+<td></td>
+<td>Get all available archetype for a given desktop name</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/v1/terminal/desktop/archetype_config</td>
+<td><code>archetype</code></td>
+<td>Get the config of a given archetype</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/v1/terminal/smartphone/archetypes</td>
+<td></td>
+<td>Get all available archetype for a given smartphone name</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/v1/terminal/smartphone/archetype_config</td>
+<td><code>archetype</code></td>
+<td>Get the config of a given archetype</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/v1/terminal/tablet/archetypes</td>
+<td></td>
+<td>Get all available archetype for a given tablet name</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/v1/terminal/tablet/archetype_config</td>
+<td><code>archetype</code></td>
+<td>Get the config of a given archetype</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/v1/terminal/television/archetypes</td>
+<td></td>
+<td>Get all available archetype for a given television name</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/v1/terminal/television/archetype_config</td>
+<td><code>archetype</code></td>
+<td>Get the config of a given archetype</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/v1/terminal/box/archetypes</td>
+<td></td>
+<td>Get all available archetype for a given box name</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/v1/terminal/box/archetype_config</td>
+<td><code>archetype</code></td>
+<td>Get the config of a given archetype</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/v1/peripheral/all</td>
+<td></td>
+<td>Get all available peripheral with their route prefix</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/v1/peripheral/monitor/archetypes</td>
+<td></td>
+<td>Get all available archetype for a given monitor name</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/v1/peripheral/monitor/archetype_config</td>
+<td><code>archetype</code></td>
+<td>Get the config of a given archetype</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/v1/peripheral/usb_stick/archetypes</td>
+<td></td>
+<td>Get all available archetype for a given usb_stick name</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/v1/peripheral/usb_stick/archetype_config</td>
+<td><code>archetype</code></td>
+<td>Get the config of a given archetype</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/v1/peripheral/external_hdd/archetypes</td>
+<td></td>
+<td>Get all available archetype for a given external_hdd name</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/v1/peripheral/external_hdd/archetype_config</td>
+<td><code>archetype</code></td>
+<td>Get the config of a given archetype</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/v1/peripheral/external_ssd/archetypes</td>
+<td></td>
+<td>Get all available archetype for a given external_ssd name</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/v1/peripheral/external_ssd/archetype_config</td>
+<td><code>archetype</code></td>
+<td>Get the config of a given archetype</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/v1/component/all</td>
+<td></td>
+<td>Get all available components with their route prefix</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/v1/component/cpu/archetypes</td>
+<td></td>
+<td>Get all available archetype for a cpu</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/v1/component/cpu/archetype_config</td>
+<td><code>archetype</code></td>
+<td>Get the config of a given cpu archetype</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/v1/component/ram/archetypes</td>
+<td></td>
+<td>Get all available archetype for a ram</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/v1/component/ram/archetype_config</td>
+<td><code>archetype</code></td>
+<td>Get the config of a given ram archetype</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/v1/component/ssd/archetypes</td>
+<td></td>
+<td>Get all available archetype for a ssd</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/v1/component/ssd/archetype_config</td>
+<td><code>archetype</code></td>
+<td>Get the config of a given ssd archetype</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/v1/component/hdd/archetypes</td>
+<td></td>
+<td>Get all available archetype for a hdd</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/v1/component/hdd/archetype_config</td>
+<td><code>archetype</code></td>
+<td>Get the config of a given hdd archetype</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/v1/component/motherboard/archetypes</td>
+<td></td>
+<td>Get all available archetype for a motherboard</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/v1/component/motherboard/archetype_config</td>
+<td><code>archetype</code></td>
+<td>Get the config of a given motherboard archetype</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/v1/component/case/archetypes</td>
+<td></td>
+<td>Get all available archetype for a case</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/v1/component/case/archetype_config</td>
+<td><code>archetype</code></td>
+<td>Get the config of a given case archetype</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/v1/component/power_supply/archetypes</td>
+<td></td>
+<td>Get all available archetype for a power_supply</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/v1/component/power_supply/archetype_config</td>
+<td><code>archetype</code></td>
+<td>Get the config of a given power_supply archetype</td>
 </tr>
 <tr>
 <td>GET</td>

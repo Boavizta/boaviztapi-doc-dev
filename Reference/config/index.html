@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-8.5.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.5.4">
     
     
       
@@ -17,7 +17,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.20d9efc8.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.80dcb947.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
@@ -251,7 +251,7 @@
   
   
     <li class="md-nav__item">
-      <a href="https://dev.api.boavizta.org/docs" class="md-nav__link">
+      <a href="https://api.boavizta.org/docs" class="md-nav__link">
         Try the API (OpenAPI)
       </a>
     </li>
@@ -309,6 +309,20 @@
     <li class="md-nav__item">
       <a href="../../getting_started/consumption_profile/" class="md-nav__link">
         Get started with consumption profiles
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/end_user_devices/" class="md-nav__link">
+        Get started with terminal and peripherals
       </a>
     </li>
   
@@ -797,7 +811,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Explanations/devices/end_user_devices/" class="md-nav__link">
+      <a href="../../Explanations/devices/terminals_%26_peripherals/" class="md-nav__link">
         End user devices
       </a>
     </li>
@@ -1070,6 +1084,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#minimal-significant-figures" class="md-nav__link">
+    Minimal significant figures
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1138,6 +1159,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#minimal-significant-figures" class="md-nav__link">
+    Minimal significant figures
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1161,20 +1189,21 @@
 The parameter is used to complete the impact of electricity.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>default_location: &quot;EEE&quot;
 </code></pre></div>
-
 <h2 id="default-archetype">Default archetype</h2>
 <p>The default archetype will be used if the user does not specify an <code>archetype</code> in the request.
 Note that it must match an existing archetype ID in the archetype files.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>..
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>default_cpu: &quot;DEFAULT&quot;
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>default_server: &quot;compute_medium&quot;
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>...
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>default_cpu: &quot;DEFAULT&quot;
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>default_server: &quot;compute_medium&quot;
 </code></pre></div>
-
 <h2 id="default_criteria">Default_criteria</h2>
 <p>The default criteria will be used if the user does not specify the <code>criteria</code> in the request.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>default_criteria: [&quot;gwp&quot;, &quot;adp&quot;, &quot;pe&quot;]
 </code></pre></div>
+<h2 id="minimal-significant-figures">Minimal significant figures</h2>
+<p>The minimal significant figures will be used to round the results of the API.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>min_significant_figures: 5
+</code></pre></div>
+<p><em>If set to 5, the results will be rounded to 5 significant figures.</em></p>
 
 
 
