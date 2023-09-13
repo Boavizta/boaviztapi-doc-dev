@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.5.4">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
     
     
       
@@ -17,10 +17,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.80dcb947.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.975780f9.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
         
       
       
@@ -52,7 +52,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="None" data-md-color-accent="None">
   
     
     
@@ -684,8 +684,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#completion-of-the-die_size_per_core-from-family-andor-core_units" class="md-nav__link">
-    Completion of the die_size_per_core from family and/or core_units
+  <a href="#completion-of-the-die_size-from-family-andor-core_units" class="md-nav__link">
+    Completion of the die_size from family and/or core_units
   </a>
   
 </li>
@@ -1258,8 +1258,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#completion-of-the-die_size_per_core-from-family-andor-core_units" class="md-nav__link">
-    Completion of the die_size_per_core from family and/or core_units
+  <a href="#completion-of-the-die_size-from-family-andor-core_units" class="md-nav__link">
+    Completion of the die_size from family and/or core_units
   </a>
   
 </li>
@@ -1401,22 +1401,22 @@
 </tr>
 <tr>
 <td>die_size</td>
-<td>cm2</td>
+<td>mm2</td>
 <td>None</td>
 <td>Size of the die</td>
 <td>1.1</td>
 </tr>
 <tr>
-<td>embeddedr</td>
+<td>embedded</td>
 <td>None</td>
 <td>None</td>
-<td>Name of the CPU embeddedr</td>
+<td>Name of the CPU embedded</td>
 <td>AMD</td>
 </tr>
 <tr>
 <td>die_size_per_core</td>
-<td>cm2</td>
-<td>(avg;min;max) in our dataset</td>
+<td>mm2</td>
+<td>None</td>
 <td>Size of the die divided by the number of core</td>
 <td>0.245</td>
 </tr>
@@ -1456,15 +1456,16 @@
 <p>If CPU <code>name</code> is given, <code>model_range</code>, <code>tdp</code>, <code>die_size</code> and <code>family</code> can be retrieved from a fuzzy matching on our cpu name repository. </p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Note that the cpu name repository is not complete and that the completion can return a different cpu than the one given by the user.</p>
+<p>Note that the cpu name repository is not complete and the completion can return a different cpu than the one given by the user.</p>
 </div>
-<h3 id="completion-of-the-die_size_per_core-from-family-andor-core_units">Completion of the <code>die_size_per_core</code> from <code>family</code> and/or <code>core_units</code></h3>
-<p>if <code>die_size</code> and <code>core_units</code> are given :</p>
-<div class="arithmatex">\[ \text{die_size_per_core} = \frac{\text{core_units}}{\text{die_size}}\]</div>
-<p>Otherwise, if <code>family</code> is given, <code>die_size_per_core</code> can be retrieved from a fuzzy matching on our cpu repository.</p>
-<p>If several cpu matches the given <code>family</code>, the closest value in terms of <code>core_units</code> is used (if <code>core_units</code> given by the user). <code>min</code> and <code>max</code> will be set if the closest value does not correspond to the exact same <code>core_units</code> value provided by the user.</p>
-<p>If <code>core_units</code> is not provided, the average value is given and min and max value are used as <code>min</code> and <code>max</code> fields.</p>
-<p>If no cpu is found either because the cpu is unknown or not enough data have been given by the user the archetype data are used.</p>
+<h3 id="completion-of-the-die_size-from-family-andor-core_units">Completion of the <code>die_size</code> from <code>family</code> and/or <code>core_units</code></h3>
+<p>if <code>die_size_per_core</code> and <code>core_units</code> are given :</p>
+<div class="arithmatex">\[ \text{die_size} = {\text{core_units}}*{\text{die_size}}\]</div>
+<p>Otherwise, if <code>family</code> is given, <code>die_size</code> can be retrieved from a fuzzy matching on our cpu repository. </p>
+<p>If several cpu matches the given <code>family</code>, we use the <code>core_units</code> attributes : 
+* If <code>core_units</code> matches one to many cpu, the average value is given and min and max value are used as <code>min</code> and <code>max</code> fields.
+* If <code>core_units</code> does not match any cpu, we infer the <code>die_size</code> with a rule of three or a linear regression (when multiple cpus are available).
+* If <code>core_units</code> is not provided, the average value is given and min and max value are used as <code>min</code> and <code>max</code> fields.</p>
 <h2 id="embedded-impacts">Embedded impacts</h2>
 <h3 id="impacts-criteria">Impacts criteria</h3>
 <table>
@@ -1815,10 +1816,10 @@ profile to match the given point.</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.078830c0.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
       
         <script src="../../../javascripts/mathjax.js"></script>
       
@@ -1826,6 +1827,7 @@ profile to match the given point.</p>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
+    
     
   </body>
 </html>
