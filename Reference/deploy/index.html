@@ -1326,8 +1326,9 @@
 <h1 id="deploy-the-api">Deploy the API</h1>
 <h2 id="deploy">Deploy</h2>
 <h3 id="with-docker">with docker</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$ docker run ghcr.io/boavizta/boaviztapi:latest
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$ docker run  -p <span class="m">5000</span>:5000 ghcr.io/boavizta/boaviztapi:latest
 </code></pre></div>
+<p>Then access api at <a href="http://localhost:5000">http://localhost:5000</a></p>
 <h3 id="with-docker-compose">with docker-compose</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.9&quot;</span><span class="w"></span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nt">services</span><span class="p">:</span><span class="w"></span>

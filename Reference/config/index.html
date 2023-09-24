@@ -1091,6 +1091,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#cpu-name-fuzzymatch-threshold" class="md-nav__link">
+    CPU name fuzzymatch threshold
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1166,6 +1173,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#cpu-name-fuzzymatch-threshold" class="md-nav__link">
+    CPU name fuzzymatch threshold
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1204,6 +1218,10 @@ Note that it must match an existing archetype ID in the archetype files.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>min_significant_figures: 5
 </code></pre></div>
 <p><em>If set to 5, the results will be rounded to 5 significant figures.</em></p>
+<h2 id="cpu-name-fuzzymatch-threshold">CPU name fuzzymatch threshold</h2>
+<p>The CPU name fuzzymatch threshold will determine the minimum similarity between the CPU name in the request and the CPU name in the database. If the similarity is lower than the threshold, the API will not use the match.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>cpu_name_fuzzymatch_threshold: 62
+</code></pre></div>
 
 
 
