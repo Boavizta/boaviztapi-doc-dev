@@ -730,6 +730,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Explanations/components/functional_blocks/" class="md-nav__link">
+        Functional block (IoT)
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -813,6 +827,20 @@
     <li class="md-nav__item">
       <a href="../../Explanations/devices/terminals_%26_peripherals/" class="md-nav__link">
         End user devices
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Explanations/devices/iot_devices/" class="md-nav__link">
+        IoT device
       </a>
     </li>
   
@@ -1371,6 +1399,11 @@
 <td>/v1/component/case</td>
 <td>Retrieve the impacts of a case</td>
 </tr>
+<tr>
+<td>GET</td>
+<td>/v1/iot/iot_device</td>
+<td>Retrieve the impacts of an IoT device</td>
+</tr>
 </tbody>
 </table>
 <h3 id="post">POST</h3>
@@ -1479,6 +1512,11 @@ The format section of the documentation details the format of the body for each 
 <td>POST</td>
 <td>/v1/component/case</td>
 <td>Retrieve the impacts of a given usage and configuration for a case</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>/v1/iot/iot_device</td>
+<td>Retrieve the impacts of an IoT device</td>
 </tr>
 </tbody>
 </table>
@@ -1764,6 +1802,18 @@ The format section of the documentation details the format of the body for each 
 <td>/v1/component/power_supply/archetype_config</td>
 <td><code>archetype</code></td>
 <td>Get the config of a given power_supply archetype</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/v1/iot/iot_device/archetypes</td>
+<td></td>
+<td>Get all available archetype for an iot device</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/v1/iot/iot_device/archetype_config</td>
+<td><code>archetype</code></td>
+<td>Get the config of a given iot device archetype</td>
 </tr>
 <tr>
 <td>GET</td>

@@ -773,6 +773,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../components/functional_blocks/" class="md-nav__link">
+        Functional block (IoT)
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -856,6 +870,20 @@
     <li class="md-nav__item">
       <a href="../devices/terminals_%26_peripherals/" class="md-nav__link">
         End user devices
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../devices/iot_devices/" class="md-nav__link">
+        IoT device
       </a>
     </li>
   
@@ -1152,7 +1180,7 @@
 <p>the API implements several approaches to complete the missing information:</p>
 <ul>
 <li><code>COMPELETE</code> : The API infer the value based on the user inputs (e.g. <code>manufacturer</code> and <code>family</code> for a CPU <code>name</code>).  </li>
-<li><code>DEFAULT</code> : The API use a default value for those missing attributes (e.g. europe for the default <code>usage_location</code>). The default values can be set in the <a href="../configuration/">configuration file</a>.</li>
+<li><code>DEFAULT</code> : The API use a default value for those missing attributes (e.g. europe for the default <code>usage_location</code>). The default values can be set in the <a href="configuration.md">configuration file</a>.</li>
 <li><code>ARCETYPE</code> : The API can use a value taken from an <a href="../archetypes/">archetype</a>**.</li>
 <li><code>CHANGED</code>: The API can change the value of an attribute to make the computation possible. This happens when you provide a value that is close to the value of an attribute but not exactly the same. For example, if you provide a <code>family</code> that is not in the database but is close to a family in the database, the API will change the <code>family</code> to the closest name in the database.</li>
 </ul>

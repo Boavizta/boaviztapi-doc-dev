@@ -730,6 +730,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Explanations/components/functional_blocks/" class="md-nav__link">
+        Functional block (IoT)
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -813,6 +827,20 @@
     <li class="md-nav__item">
       <a href="../../Explanations/devices/terminals_%26_peripherals/" class="md-nav__link">
         End user devices
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Explanations/devices/iot_devices/" class="md-nav__link">
+        IoT device
       </a>
     </li>
   
@@ -1092,9 +1120,38 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#maximal-significant-figures" class="md-nav__link">
+    Maximal significant figures
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uncertainty-percentage" class="md-nav__link">
+    Uncertainty percentage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uncertainty-10" class="md-nav__link">
+    uncertainty: 10
+
+  </a>
+  
+    <nav class="md-nav" aria-label="uncertainty: 10
+">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#cpu-name-fuzzymatch-threshold" class="md-nav__link">
     CPU name fuzzymatch threshold
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1174,9 +1231,38 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#maximal-significant-figures" class="md-nav__link">
+    Maximal significant figures
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uncertainty-percentage" class="md-nav__link">
+    Uncertainty percentage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uncertainty-10" class="md-nav__link">
+    uncertainty: 10
+
+  </a>
+  
+    <nav class="md-nav" aria-label="uncertainty: 10
+">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#cpu-name-fuzzymatch-threshold" class="md-nav__link">
     CPU name fuzzymatch threshold
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1195,8 +1281,6 @@
                   
 
 
-  <h1>Configuration</h1>
-
 <p>The config file located at data/config.json is used to set default values for the following parameters.</p>
 <h2 id="default-location">Default location</h2>
 <p>The default location will be used if the user does not specify a <code>usage_location</code> in the request. 
@@ -1214,13 +1298,25 @@ Note that it must match an existing archetype ID in the archetype files.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>default_criteria: [&quot;gwp&quot;, &quot;adp&quot;, &quot;pe&quot;]
 </code></pre></div>
 <h2 id="minimal-significant-figures">Minimal significant figures</h2>
-<p>The minimal significant figures will be used to round the results of the API.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>min_significant_figures: 5
+<p>The minimal number of significant figures will be employed if classical rounding yields a result containing more significant figures than the minimal allowed.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>min_sig_fig: 1
 </code></pre></div>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+<em>If set to 1, the results will be rounded at least to 1 significant figures.</em></p>
+<h2 id="maximal-significant-figures">Maximal significant figures</h2>
+<p>The maximum number of significant figures will be employed if classical rounding yields a result containing more significant figures than the maximum allowed.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>max_sig_fig: 5
+</code></pre></div></p>
+<p><em>If set to 5, the results will be rounded to a maximum of 5 significant figures.</em></p>
+<h2 id="uncertainty-percentage">Uncertainty percentage</h2>
+<p>Uncertainty percentage is used to adapt the intensity of the rounding. The lower the uncertainty percentage, the lower aggressive the rounding.</p>
+<h1 id="uncertainty-10"><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>uncertainty: 10
+</code></pre></div></h1>
 <p><em>If set to 5, the results will be rounded to 5 significant figures.</em></p>
 <h2 id="cpu-name-fuzzymatch-threshold">CPU name fuzzymatch threshold</h2>
 <p>The CPU name fuzzymatch threshold will determine the minimum similarity between the CPU name in the request and the CPU name in the database. If the similarity is lower than the threshold, the API will not use the match.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>cpu_name_fuzzymatch_threshold: 62
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>cpu_name_fuzzymatch_threshold: 62
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>&gt;&gt;&gt;&gt;&gt;&gt;&gt; 0416dde5deaffdb14496936b91c5c66b64570f9d
 </code></pre></div>
 
 

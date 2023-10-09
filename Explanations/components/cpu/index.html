@@ -730,11 +730,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#consumption-profile" class="md-nav__link">
-    Consumption profile
+  <a href="#power-consumption-profile" class="md-nav__link">
+    Power Consumption profile
   </a>
   
-    <nav class="md-nav" aria-label="Consumption profile">
+    <nav class="md-nav" aria-label="Power Consumption profile">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -883,6 +883,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functional_blocks/" class="md-nav__link">
+        Functional block (IoT)
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -966,6 +980,20 @@
     <li class="md-nav__item">
       <a href="../../devices/terminals_%26_peripherals/" class="md-nav__link">
         End user devices
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devices/iot_devices/" class="md-nav__link">
+        IoT device
       </a>
     </li>
   
@@ -1304,11 +1332,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#consumption-profile" class="md-nav__link">
-    Consumption profile
+  <a href="#power-consumption-profile" class="md-nav__link">
+    Power Consumption profile
   </a>
   
-    <nav class="md-nav" aria-label="Consumption profile">
+    <nav class="md-nav" aria-label="Power Consumption profile">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1642,15 +1670,22 @@
 </div>
 <h2 id="usage-impacts">Usage impacts</h2>
 <p>Both <a href="../../usage/elec_conso/">power consumption</a> and <a href="../../consumption_profile/">consumption profile</a> are implemented.</p>
-<h2 id="consumption-profile">Consumption profile</h2>
-<p>The CPU consumption profile is of the form : <code>consumption_profile(workload) = a*ln(b+(workload*c))+d</code></p>
+<h2 id="power-consumption-profile">Power Consumption profile</h2>
+<p>The CPU consumption profile is of the form: </p>
+<div class="arithmatex">\[
+PowerConsumption(workload) = a * \ln(b * (workload + c)) + d
+\]</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>We apply a log regression to fit data points <span class="arithmatex">\((workload, power)\)</span> starting from a default consumption profile that can be found using the CPU <code>model_range</code>. This process can (in some cases) yield very low or negative power values due to wrong input data or model initialization. <strong>That is why there is a minimum power consumption limit set to 1W for any input workload</strong>.</p>
+</div>
 <h3 id="determining-the-parameters">Determining the parameters</h3>
 <h4 id="from-model-range">From model range</h4>
 <p>If <code>model_range</code> is given or is completed from the <code>cpu_name</code>, we use the averaged parameter for the specific model range.</p>
 <table>
 <thead>
 <tr>
-<th>embeddedr</th>
+<th>manufacturer</th>
 <th>model_range</th>
 <th>a</th>
 <th>b</th>
@@ -1661,62 +1696,60 @@
 <tbody>
 <tr>
 <td>Intel</td>
-<td>xeon platinum</td>
-<td>342.3624349628362</td>
-<td>0.034750819765533035</td>
-<td>36.89522616719806</td>
-<td>-16.402219089443307</td>
+<td>Xeon Platinum</td>
+<td>171.1813</td>
+<td>0.0354</td>
+<td>36.8953</td>
+<td>-10.1336</td>
 </tr>
 <tr>
 <td>Intel</td>
-<td>xeon gold</td>
-<td>71.13767381183924</td>
-<td>0.2280562153242743</td>
-<td>9.66939980437224</td>
-<td>6.266004455550223</td>
+<td>Xeon Gold</td>
+<td>35.5688</td>
+<td>0.2438</td>
+<td>9.6694</td>
+<td>-0.6087</td>
 </tr>
 <tr>
 <td>Intel</td>
-<td>xeon silver</td>
-<td>41.55884200277906</td>
-<td>0.2805828410398358</td>
-<td>8.424085900547572</td>
-<td>4.764407035404158</td>
+<td>Xeon Silver</td>
+<td>20.7794</td>
+<td>0.3043</td>
+<td>8.4241</td>
+<td>0.8613</td>
 </tr>
 <tr>
 <td>Intel</td>
-<td>xeon e5</td>
-<td>97.83350026272564</td>
-<td>0.10296318761911205</td>
-<td>15.726228837967518</td>
-<td>-1.8588498922070307</td>
+<td>Xeon E5</td>
+<td>48.9167</td>
+<td>0.1349</td>
+<td>15.7262</td>
+<td>-4.654</td>
 </tr>
 <tr>
 <td>Intel</td>
-<td>xeon e3</td>
-<td>342.3624349628362</td>
-<td>0.034750819765533035</td>
-<td>36.89522616719806</td>
-<td>-16.402219089443307</td>
+<td>Xeon E3</td>
+<td>342.3624</td>
+<td>0.0347</td>
+<td>36.8952</td>
+<td>-16.4022</td>
 </tr>
 <tr>
 <td>Intel</td>
-<td>xeon e</td>
-<td>55.65014194649273</td>
-<td>0.04666041377084888</td>
-<td>20.41458697644834</td>
-<td>4.243652609400892</td>
+<td>Xeon E</td>
+<td>55.6501</td>
+<td>0.0467</td>
+<td>20.4146</td>
+<td>4.24362</td>
 </tr>
 </tbody>
 </table>
 <p>By default, we use the consumption profile of <strong>Intel Xeon Platinum</strong></p>
-<p><TODO: fix consumption profile graphs>
-<img alt="cp_cpu_xeon_platinum.png" src="../cp_cpu_xeon_platinum.png" /></p>
+<p><img alt="cp_cpu_xeon_platinum.svg" src="../cp_cpu_xeon_platinum.svg" /></p>
 <h4 id="model-adaptation-from-punctual-measurement">Model adaptation from punctual measurement</h4>
 <p>In case punctual power measurement (load;power_consumption) are given by a user, we adapt the selected consumption
 profile to match the given point.</p>
-<p><TODO: fix consumption profile graphs>
-<img alt="cp_cpu_fine_tune.png" src="../cp_cpu_fine_tune.png" /></p>
+<p><img alt="cp_cpu_fine_tuned.svg" src="../cp_cpu_fine_tuned.svg" /></p>
 <h4 id="model-adaptation-from-tdp">Model adaptation from TDP</h4>
 <p>If the TDP is given we use the average power consumption per unit of TDP (given by TEADS) multiplied by the given TDP as power measurement and compute a model adaptation as describe above. </p>
 <table>

@@ -639,6 +639,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#rounding" class="md-nav__link">
+    Rounding
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -800,6 +807,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../components/functional_blocks/" class="md-nav__link">
+        Functional block (IoT)
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -883,6 +904,20 @@
     <li class="md-nav__item">
       <a href="../devices/terminals_%26_peripherals/" class="md-nav__link">
         End user devices
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../devices/iot_devices/" class="md-nav__link">
+        IoT device
       </a>
     </li>
   
@@ -1186,6 +1221,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#rounding" class="md-nav__link">
+    Rounding
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1222,6 +1264,10 @@
 <p>Error margins are set when <code>DEFAULT</code> values are used. For example, if you do not provide the usage location of a device, the API will use the default usage location of the device.In this case we set a minimal (min) and maximal value (max) based on the available usage location and compute the impact with the minimal and maximal value to report a min and max impacts values.</p>
 <h3 id="error-margin-from-archetype-values">Error margin from <a href="../archetypes/">archetype</a> values</h3>
 <p>Error margins are set when <code>ARCHETYPE</code> values are used. For example, if you do not provide any information on your CPU, we will use the value of the attribute taken from the archetype. If the archetype provide a min and a max value for this specific attribute, those values will be used to compute min and max impacts values.</p>
+<h2 id="rounding">Rounding</h2>
+<p>Impact values are rounded depending on the distance between min and max values. The bigger the difference, the more aggressive the rounding.
+To adapt the intensity of the rounding, we use an uncertainty percentage which can be set in configuration file. The default value is 10%. The lower the uncertainty percentage, the lower aggressive the rounding.</p>
+<p>You can set a minimal and maximal significant digit for the rounding in the configuration file.</p>
 
 
 
